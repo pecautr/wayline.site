@@ -30,13 +30,18 @@
   --ink-mid:       #5c4030;
   --ink-light:     #8a6a4e;
 
-  /* Section backgrounds */
+  /* Section backgrounds (hard-coded brand darks) */
   --bg-hero:       #f4ede0;
   --bg-about:      #ece4d3;
   --bg-transit:    #0d1f1e;
   --bg-cities:     #0d1a10;
   --bg-wilderness: #141300;
   --bg-connect:    #1a1408;
+
+  /* Brand accent colours (used for edge bars, buttons, handles) */
+  --bg-transit-accent:    #12A19A;
+  --bg-cities-accent:     #007A1F;
+  --bg-wilderness-accent: #A19F12;
 
   --light: #f4ede0;
   --white: #faf7f2;
@@ -46,7 +51,7 @@
   --font-display:  'Hermeneus One', Georgia, 'Times New Roman', serif;
   /* Gasoek One — Transit section */
   --font-transit:  'Gasoek One', 'Hermeneus One', serif;
-  /* Skranji — Cities section (closest available to requested "Sleokchher") */
+  /* Skranji — Cities section (bold urban stencil; update if a specific typeface is confirmed) */
   --font-cities:   'Skranji', 'Hermeneus One', serif;
   /* DM Sans — body copy */
   --font-body:     'DM Sans', system-ui, sans-serif;
@@ -485,7 +490,73 @@ nav {
 }
 
 /* ============================================================
-   TRANSIT SECTION
+   CONTENT PILLARS  — replaces embed for unreserved channels
+   ============================================================ */
+.content-pillars {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  width: 100%;
+  max-width: 420px;
+  background: rgba(255,255,255,0.18);
+  outline: 1px solid rgba(255,255,255,0.18);
+}
+
+.pillar {
+  padding: 1.4rem 1.2rem;
+  background: rgba(0,0,0,0.12);
+}
+
+.pillar-num {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  opacity: 0.45;
+  margin-bottom: 0.55rem;
+}
+
+.pillar h4 {
+  font-family: var(--font-display);
+  font-size: 0.88rem;
+  font-weight: 400;
+  margin-bottom: 0.4rem;
+  line-height: 1.25;
+}
+
+.pillar p {
+  font-size: 0.78rem;
+  line-height: 1.65;
+  opacity: 0.7;
+}
+
+/* Wilderness dark-text overrides for pillars */
+.wilderness-section .content-pillars {
+  background: rgba(0,0,0,0.12);
+  outline-color: rgba(0,0,0,0.12);
+}
+.wilderness-section .pillar {
+  background: rgba(0,0,0,0.08);
+}
+
+/* "Channel coming soon" badge */
+.channel-status {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 0.22rem 0.7rem;
+  border: 1.5px solid currentColor;
+  opacity: 0.55;
+  margin-bottom: 0.8rem;
+}
+
+/* ============================================================
+   TRANSIT SECTION  — dark teal bg, white text, teal accent bar
    ============================================================ */
 .transit-section {
   background-color: var(--bg-transit);
@@ -495,13 +566,12 @@ nav {
   color: var(--white);
 }
 
-/* Teal rule on left edge */
 .transit-section::before {
   content: '';
   position: absolute;
   top: 0; bottom: 0; left: 0;
   width: 3px;
-  background: linear-gradient(180deg, transparent, var(--transit), transparent);
+  background: linear-gradient(180deg, transparent, var(--bg-transit-accent), transparent);
   z-index: 1;
 }
 
@@ -510,7 +580,7 @@ nav {
 }
 
 /* ============================================================
-   CITIES SECTION
+   CITIES SECTION  — dark green bg, white text, green accent bar
    ============================================================ */
 .cities-section {
   background-color: var(--bg-cities);
@@ -525,7 +595,7 @@ nav {
   position: absolute;
   top: 0; bottom: 0; right: 0;
   width: 3px;
-  background: linear-gradient(180deg, transparent, var(--cities), transparent);
+  background: linear-gradient(180deg, transparent, var(--bg-cities-accent), transparent);
   z-index: 1;
 }
 
@@ -538,13 +608,13 @@ nav {
   position: absolute;
   bottom: 0; left: 0; right: 0;
   height: 120px;
-  opacity: 0.06;
+  opacity: 0.07;
   pointer-events: none;
   z-index: 0;
 }
 
 /* ============================================================
-   WILDERNESS SECTION
+   WILDERNESS SECTION  — dark olive bg, white text, olive accent bar
    ============================================================ */
 .wilderness-section {
   background-color: var(--bg-wilderness);
@@ -559,7 +629,7 @@ nav {
   position: absolute;
   top: 0; bottom: 0; left: 0;
   width: 3px;
-  background: linear-gradient(180deg, transparent, var(--wilderness), transparent);
+  background: linear-gradient(180deg, transparent, var(--bg-wilderness-accent), transparent);
   z-index: 1;
 }
 
@@ -568,7 +638,7 @@ nav {
   position: absolute;
   bottom: 0; left: 0; right: 0;
   height: 140px;
-  opacity: 0.07;
+  opacity: 0.08;
   pointer-events: none;
   z-index: 0;
 }
@@ -676,10 +746,12 @@ footer .footer-row { display: flex; flex-wrap: wrap; justify-content: center; ga
   .brand-deco-letter { display: none; }
   .nav-links { display: none; }
   .hero h1 { font-size: 2.6rem; }
+  .content-pillars { max-width: 100%; }
 }
 
 @media (max-width: 480px) {
   nav { padding: 0.9rem 1.25rem; }
   .about, .brand-section, .connect-section { padding: 4rem 1.25rem; }
   .hero { padding: 6rem 1.25rem 4rem; }
+  .content-pillars { grid-template-columns: 1fr; }
 }
