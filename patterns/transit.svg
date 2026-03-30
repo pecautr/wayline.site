@@ -1,27 +1,30 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="200" height="160" viewBox="0 0 200 160">
-  <!-- Metro line A – thicker, brighter -->
-  <line x1="0" y1="40"  x2="200" y2="40"  stroke="rgba(18,161,154,0.28)" stroke-width="2"/>
-  <!-- Metro line B -->
-  <line x1="0" y1="80"  x2="200" y2="80"  stroke="rgba(18,161,154,0.18)" stroke-width="1.5"/>
-  <!-- Metro line C – thicker, brighter -->
-  <line x1="0" y1="120" x2="200" y2="120" stroke="rgba(18,161,154,0.28)" stroke-width="2"/>
-
-  <!-- Crosstown connector 1 -->
-  <line x1="60"  y1="0" x2="60"  y2="160" stroke="rgba(18,161,154,0.2)" stroke-width="1.5"/>
-  <!-- Crosstown connector 2 -->
-  <line x1="140" y1="0" x2="140" y2="160" stroke="rgba(18,161,154,0.2)" stroke-width="1.5"/>
-
+  <!-- Hand-drawn transit map: slightly irregular curves evoke a printed pocket map -->
+  <!-- Line A (top) -->
+  <path d="M0,38 C50,36 100,42 150,39 C175,37 192,40 200,38"
+        stroke="rgba(18,161,154,0.28)" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <!-- Line B (middle) -->
+  <path d="M0,80 C40,82 90,78 130,80 C165,82 188,79 200,80"
+        stroke="rgba(18,161,154,0.18)" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+  <!-- Line C (bottom) -->
+  <path d="M0,122 C45,120 95,124 148,121 C172,119 192,123 200,122"
+        stroke="rgba(18,161,154,0.28)" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <!-- Cross-town connectors -->
+  <path d="M60,0 C62,40 58,90 60,130 C62,150 59,158 60,160"
+        stroke="rgba(18,161,154,0.2)" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+  <path d="M140,0 C138,45 142,95 140,135 C138,150 141,158 140,160"
+        stroke="rgba(18,161,154,0.2)" stroke-width="1.5" fill="none" stroke-linecap="round"/>
   <!-- Station rings at major intersections -->
-  <circle cx="60"  cy="40"  r="5" fill="none" stroke="rgba(18,161,154,0.5)" stroke-width="1.5"/>
-  <circle cx="140" cy="40"  r="5" fill="none" stroke="rgba(18,161,154,0.5)" stroke-width="1.5"/>
-  <circle cx="60"  cy="120" r="5" fill="none" stroke="rgba(18,161,154,0.5)" stroke-width="1.5"/>
-  <circle cx="140" cy="120" r="5" fill="none" stroke="rgba(18,161,154,0.5)" stroke-width="1.5"/>
-  <!-- Interchange solid dots -->
-  <circle cx="60"  cy="80"  r="3" fill="rgba(18,161,154,0.32)"/>
-  <circle cx="140" cy="80"  r="3" fill="rgba(18,161,154,0.32)"/>
-  <!-- End-of-line terminal caps -->
-  <circle cx="0"   cy="40"  r="2.5" fill="rgba(18,161,154,0.2)"/>
-  <circle cx="200" cy="40"  r="2.5" fill="rgba(18,161,154,0.2)"/>
-  <circle cx="0"   cy="120" r="2.5" fill="rgba(18,161,154,0.2)"/>
-  <circle cx="200" cy="120" r="2.5" fill="rgba(18,161,154,0.2)"/>
+  <circle cx="60"  cy="38"  r="5" fill="none" stroke="rgba(18,161,154,0.48)" stroke-width="1.5"/>
+  <circle cx="140" cy="38"  r="5" fill="none" stroke="rgba(18,161,154,0.48)" stroke-width="1.5"/>
+  <circle cx="60"  cy="122" r="5" fill="none" stroke="rgba(18,161,154,0.48)" stroke-width="1.5"/>
+  <circle cx="140" cy="122" r="5" fill="none" stroke="rgba(18,161,154,0.48)" stroke-width="1.5"/>
+  <!-- Interchange dots -->
+  <circle cx="60"  cy="80" r="3" fill="rgba(18,161,154,0.32)"/>
+  <circle cx="140" cy="80" r="3" fill="rgba(18,161,154,0.32)"/>
+  <!-- Terminal caps -->
+  <circle cx="0"   cy="38"  r="2.5" fill="rgba(18,161,154,0.2)"/>
+  <circle cx="200" cy="38"  r="2.5" fill="rgba(18,161,154,0.2)"/>
+  <circle cx="0"   cy="122" r="2.5" fill="rgba(18,161,154,0.2)"/>
+  <circle cx="200" cy="122" r="2.5" fill="rgba(18,161,154,0.2)"/>
 </svg>

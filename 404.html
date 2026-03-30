@@ -8,17 +8,17 @@
   <title>Page Not Found — Wayline</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Hermeneus+One&family=DM+Sans:wght@400;600&display=swap" rel="stylesheet" />
   <style>
-    :root { --wayline: #CB7F00; }
+    :root { --wayline: #CB7F00; --ink: #2c1f0f; --paper: #f4ede0; }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      font-family: 'Space Grotesk', system-ui, sans-serif;
-      background: #0f0f0f;
+      font-family: 'DM Sans', system-ui, sans-serif;
+      background: var(--paper);
       background-image: url('patterns/hero.svg');
       background-repeat: repeat;
-      background-size: 80px 80px;
-      color: #fff;
+      background-size: 200px 200px;
+      color: var(--ink);
       min-height: 100vh;
       display: flex;
       flex-direction: column;
@@ -31,29 +31,40 @@
       content: '';
       position: fixed;
       inset: 0;
-      background: radial-gradient(ellipse 60% 50% at 50% 50%, rgba(203,127,0,0.12) 0%, transparent 70%);
+      background: radial-gradient(ellipse 55% 45% at 50% 50%, rgba(203,127,0,0.07) 0%, transparent 70%);
       pointer-events: none;
     }
+    body::after {
+      content: '';
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      background: var(--wayline);
+    }
     .code {
+      font-family: 'Hermeneus One', Georgia, serif;
       font-size: clamp(5rem, 18vw, 10rem);
-      font-weight: 700;
+      font-weight: 400;
       color: var(--wayline);
       line-height: 1;
-      letter-spacing: -0.04em;
+      letter-spacing: 0.02em;
     }
-    h1 { font-size: clamp(1.4rem, 4vw, 2rem); margin: 1rem 0 0.75rem; }
-    p { color: rgba(255,255,255,0.55); font-size: 1rem; margin-bottom: 2rem; }
+    h1 { font-family: 'Hermeneus One', Georgia, serif; font-weight: 400; font-size: clamp(1.4rem, 4vw, 2rem); margin: 1rem 0 0.75rem; color: var(--ink); }
+    p { color: rgba(44,31,15,0.58); font-size: 1rem; margin-bottom: 2rem; }
     a {
       display: inline-block;
       background: var(--wayline);
-      color: #fff;
+      color: #faf7f2;
       padding: 0.75rem 1.75rem;
-      border-radius: 0.4rem;
+      border-radius: 0.15rem;
       font-weight: 600;
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
       text-decoration: none;
       transition: filter 0.2s;
     }
-    a:hover { filter: brightness(1.12); }
+    a:hover { filter: brightness(1.1); }
   </style>
 </head>
 <body>

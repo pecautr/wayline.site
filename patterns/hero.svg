@@ -1,23 +1,42 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80">
-  <!-- Corner dots -->
-  <circle cx="0"  cy="0"  r="1.8" fill="rgba(203,127,0,0.28)"/>
-  <circle cx="80" cy="0"  r="1.8" fill="rgba(203,127,0,0.28)"/>
-  <circle cx="0"  cy="80" r="1.8" fill="rgba(203,127,0,0.28)"/>
-  <circle cx="80" cy="80" r="1.8" fill="rgba(203,127,0,0.28)"/>
-  <!-- Edge mid dots -->
-  <circle cx="40" cy="0"  r="1.2" fill="rgba(203,127,0,0.14)"/>
-  <circle cx="0"  cy="40" r="1.2" fill="rgba(203,127,0,0.14)"/>
-  <circle cx="80" cy="40" r="1.2" fill="rgba(203,127,0,0.14)"/>
-  <circle cx="40" cy="80" r="1.2" fill="rgba(203,127,0,0.14)"/>
-  <!-- Centre hub dot -->
-  <circle cx="40" cy="40" r="2.2" fill="rgba(203,127,0,0.35)"/>
-  <!-- Spoke lines to centre -->
-  <line x1="0"  y1="0"  x2="40" y2="40" stroke="rgba(203,127,0,0.09)" stroke-width="0.8"/>
-  <line x1="80" y1="0"  x2="40" y2="40" stroke="rgba(203,127,0,0.09)" stroke-width="0.8"/>
-  <line x1="0"  y1="80" x2="40" y2="40" stroke="rgba(203,127,0,0.09)" stroke-width="0.8"/>
-  <line x1="80" y1="80" x2="40" y2="40" stroke="rgba(203,127,0,0.09)" stroke-width="0.8"/>
-  <line x1="40" y1="0"  x2="40" y2="40" stroke="rgba(203,127,0,0.06)" stroke-width="0.8"/>
-  <line x1="0"  y1="40" x2="40" y2="40" stroke="rgba(203,127,0,0.06)" stroke-width="0.8"/>
-  <line x1="80" y1="40" x2="40" y2="40" stroke="rgba(203,127,0,0.06)" stroke-width="0.8"/>
-  <line x1="40" y1="80" x2="40" y2="40" stroke="rgba(203,127,0,0.06)" stroke-width="0.8"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
+  <!-- Paper grain: subtle fibrous lines suggesting handmade paper -->
+  <!-- Horizontal fibers (slightly wavy, varied opacity) -->
+  <path d="M0,7 C30,6 70,8 110,7 C150,6 180,8 200,7" stroke="rgba(120,80,30,0.07)" stroke-width="0.6" fill="none"/>
+  <path d="M0,19 C40,18 80,20 120,19 C160,18 190,20 200,19" stroke="rgba(120,80,30,0.04)" stroke-width="0.4" fill="none"/>
+  <path d="M0,30 C25,31 60,29 95,30 C135,31 170,29 200,30" stroke="rgba(120,80,30,0.08)" stroke-width="0.7" fill="none"/>
+  <path d="M0,42 C45,41 90,43 130,42 C165,41 188,43 200,42" stroke="rgba(120,80,30,0.04)" stroke-width="0.4" fill="none"/>
+  <path d="M0,53 C35,54 75,52 115,53 C150,54 182,52 200,53" stroke="rgba(120,80,30,0.07)" stroke-width="0.6" fill="none"/>
+  <path d="M0,65 C20,64 55,66 90,65 C130,64 170,66 200,65" stroke="rgba(120,80,30,0.04)" stroke-width="0.4" fill="none"/>
+  <path d="M0,76 C40,77 80,75 120,76 C155,77 183,75 200,76" stroke="rgba(120,80,30,0.08)" stroke-width="0.7" fill="none"/>
+  <path d="M0,88 C30,87 65,89 100,88 C140,87 175,89 200,88" stroke="rgba(120,80,30,0.04)" stroke-width="0.4" fill="none"/>
+  <path d="M0,100 C50,99 90,101 130,100 C165,99 188,101 200,100" stroke="rgba(120,80,30,0.07)" stroke-width="0.6" fill="none"/>
+  <path d="M0,111 C25,112 60,110 95,111 C135,112 172,110 200,111" stroke="rgba(120,80,30,0.04)" stroke-width="0.4" fill="none"/>
+  <path d="M0,122 C35,123 75,121 115,122 C155,123 182,121 200,122" stroke="rgba(120,80,30,0.08)" stroke-width="0.7" fill="none"/>
+  <path d="M0,134 C45,133 85,135 120,134 C160,133 188,135 200,134" stroke="rgba(120,80,30,0.04)" stroke-width="0.4" fill="none"/>
+  <path d="M0,145 C30,146 70,144 110,145 C148,146 178,144 200,145" stroke="rgba(120,80,30,0.07)" stroke-width="0.6" fill="none"/>
+  <path d="M0,157 C20,156 55,158 90,157 C130,156 168,158 200,157" stroke="rgba(120,80,30,0.04)" stroke-width="0.4" fill="none"/>
+  <path d="M0,168 C40,169 80,167 120,168 C160,169 185,167 200,168" stroke="rgba(120,80,30,0.08)" stroke-width="0.7" fill="none"/>
+  <path d="M0,180 C35,179 70,181 110,180 C148,179 178,181 200,180" stroke="rgba(120,80,30,0.04)" stroke-width="0.4" fill="none"/>
+  <path d="M0,191 C50,192 100,190 150,191 C175,192 192,190 200,191" stroke="rgba(120,80,30,0.07)" stroke-width="0.6" fill="none"/>
+  <!-- Cross-fibers (vertical, very subtle) -->
+  <path d="M12,0 C11,50 13,100 12,150 C11,175 13,193 12,200" stroke="rgba(120,80,30,0.03)" stroke-width="0.3" fill="none"/>
+  <path d="M38,0 C39,40 37,90 38,140 C39,168 37,188 38,200" stroke="rgba(120,80,30,0.03)" stroke-width="0.3" fill="none"/>
+  <path d="M65,0 C64,45 66,95 65,145 C64,172 66,190 65,200" stroke="rgba(120,80,30,0.03)" stroke-width="0.3" fill="none"/>
+  <path d="M92,0 C93,55 91,105 92,155 C93,178 91,193 92,200" stroke="rgba(120,80,30,0.03)" stroke-width="0.3" fill="none"/>
+  <path d="M120,0 C119,40 121,80 120,125 C119,158 121,183 120,200" stroke="rgba(120,80,30,0.03)" stroke-width="0.3" fill="none"/>
+  <path d="M148,0 C149,50 147,100 148,150 C149,175 147,193 148,200" stroke="rgba(120,80,30,0.03)" stroke-width="0.3" fill="none"/>
+  <path d="M175,0 C174,45 176,95 175,145 C174,172 176,191 175,200" stroke="rgba(120,80,30,0.03)" stroke-width="0.3" fill="none"/>
+  <!-- Paper speckles / dust particles -->
+  <circle cx="23"  cy="35"  r="0.9" fill="rgba(120,80,30,0.08)"/>
+  <circle cx="87"  cy="12"  r="0.6" fill="rgba(120,80,30,0.06)"/>
+  <circle cx="145" cy="67"  r="0.9" fill="rgba(120,80,30,0.07)"/>
+  <circle cx="55"  cy="110" r="0.7" fill="rgba(120,80,30,0.06)"/>
+  <circle cx="178" cy="88"  r="0.8" fill="rgba(120,80,30,0.07)"/>
+  <circle cx="112" cy="155" r="0.6" fill="rgba(120,80,30,0.06)"/>
+  <circle cx="34"  cy="182" r="0.9" fill="rgba(120,80,30,0.08)"/>
+  <circle cx="165" cy="140" r="0.7" fill="rgba(120,80,30,0.07)"/>
+  <circle cx="70"  cy="195" r="0.8" fill="rgba(120,80,30,0.06)"/>
+  <circle cx="195" cy="25"  r="0.6" fill="rgba(120,80,30,0.07)"/>
+  <circle cx="8"   cy="148" r="0.7" fill="rgba(120,80,30,0.06)"/>
+  <circle cx="130" cy="48"  r="0.8" fill="rgba(120,80,30,0.07)"/>
 </svg>
