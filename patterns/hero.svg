@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80">
+  <!-- Corner dots -->
+  <circle cx="0"  cy="0"  r="1.8" fill="rgba(203,127,0,0.28)"/>
+  <circle cx="80" cy="0"  r="1.8" fill="rgba(203,127,0,0.28)"/>
+  <circle cx="0"  cy="80" r="1.8" fill="rgba(203,127,0,0.28)"/>
+  <circle cx="80" cy="80" r="1.8" fill="rgba(203,127,0,0.28)"/>
+  <!-- Edge mid dots -->
+  <circle cx="40" cy="0"  r="1.2" fill="rgba(203,127,0,0.14)"/>
+  <circle cx="0"  cy="40" r="1.2" fill="rgba(203,127,0,0.14)"/>
+  <circle cx="80" cy="40" r="1.2" fill="rgba(203,127,0,0.14)"/>
+  <circle cx="40" cy="80" r="1.2" fill="rgba(203,127,0,0.14)"/>
+  <!-- Centre hub dot -->
+  <circle cx="40" cy="40" r="2.2" fill="rgba(203,127,0,0.35)"/>
+  <!-- Spoke lines to centre -->
+  <line x1="0"  y1="0"  x2="40" y2="40" stroke="rgba(203,127,0,0.09)" stroke-width="0.8"/>
+  <line x1="80" y1="0"  x2="40" y2="40" stroke="rgba(203,127,0,0.09)" stroke-width="0.8"/>
+  <line x1="0"  y1="80" x2="40" y2="40" stroke="rgba(203,127,0,0.09)" stroke-width="0.8"/>
+  <line x1="80" y1="80" x2="40" y2="40" stroke="rgba(203,127,0,0.09)" stroke-width="0.8"/>
+  <line x1="40" y1="0"  x2="40" y2="40" stroke="rgba(203,127,0,0.06)" stroke-width="0.8"/>
+  <line x1="0"  y1="40" x2="40" y2="40" stroke="rgba(203,127,0,0.06)" stroke-width="0.8"/>
+  <line x1="80" y1="40" x2="40" y2="40" stroke="rgba(203,127,0,0.06)" stroke-width="0.8"/>
+  <line x1="40" y1="80" x2="40" y2="40" stroke="rgba(203,127,0,0.06)" stroke-width="0.8"/>
+</svg>
