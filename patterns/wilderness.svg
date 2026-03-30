@@ -1,9 +1,22 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="320" height="80" viewBox="0 0 320 80">
-  <!-- Contour lines – organic horizontal bezier curves that tile seamlessly on X axis -->
-  <path d="M0,10  C53,2   107,18  160,10  C213,2   267,18  320,10 " stroke="rgba(161,159,18,0.20)" stroke-width="1"    fill="none"/>
-  <path d="M0,22  C53,30  107,14  160,22  C213,30  267,14  320,22 " stroke="rgba(161,159,18,0.15)" stroke-width="0.75" fill="none"/>
-  <path d="M0,35  C53,27  107,43  160,35  C213,27  267,43  320,35 " stroke="rgba(161,159,18,0.20)" stroke-width="1"    fill="none"/>
-  <path d="M0,48  C53,56  107,40  160,48  C213,56  267,40  320,48 " stroke="rgba(161,159,18,0.15)" stroke-width="0.75" fill="none"/>
-  <path d="M0,60  C53,52  107,68  160,60  C213,52  267,68  320,60 " stroke="rgba(161,159,18,0.20)" stroke-width="1"    fill="none"/>
-  <path d="M0,72  C53,64  107,80  160,72  C213,64  267,80  320,72 " stroke="rgba(161,159,18,0.12)" stroke-width="0.75" fill="none"/>
+  <!-- Topographic contour lines — organic hand-drawn bezier curves that tile seamlessly -->
+  <path d="M0,10  C53,2   107,18  160,10  C213,2   267,18  320,10"
+        stroke="rgba(161,159,18,0.22)" stroke-width="1"    fill="none" stroke-linecap="round"/>
+  <path d="M0,22  C53,30  107,14  160,22  C213,30  267,14  320,22"
+        stroke="rgba(161,159,18,0.14)" stroke-width="0.75" fill="none" stroke-linecap="round"/>
+  <path d="M0,35  C53,27  107,43  160,35  C213,27  267,43  320,35"
+        stroke="rgba(161,159,18,0.22)" stroke-width="1"    fill="none" stroke-linecap="round"/>
+  <path d="M0,48  C53,56  107,40  160,48  C213,56  267,40  320,48"
+        stroke="rgba(161,159,18,0.14)" stroke-width="0.75" fill="none" stroke-linecap="round"/>
+  <path d="M0,60  C53,52  107,68  160,60  C213,52  267,68  320,60"
+        stroke="rgba(161,159,18,0.22)" stroke-width="1"    fill="none" stroke-linecap="round"/>
+  <path d="M0,72  C53,64  107,80  160,72  C213,64  267,80  320,72"
+        stroke="rgba(161,159,18,0.11)" stroke-width="0.75" fill="none" stroke-linecap="round"/>
+  <!-- Elevation tick marks (survey style) -->
+  <line x1="80"  y1="8"  x2="80"  y2="12" stroke="rgba(161,159,18,0.2)" stroke-width="0.75"/>
+  <line x1="160" y1="8"  x2="160" y2="12" stroke="rgba(161,159,18,0.2)" stroke-width="0.75"/>
+  <line x1="240" y1="8"  x2="240" y2="12" stroke="rgba(161,159,18,0.2)" stroke-width="0.75"/>
+  <line x1="80"  y1="33" x2="80"  y2="37" stroke="rgba(161,159,18,0.2)" stroke-width="0.75"/>
+  <line x1="160" y1="33" x2="160" y2="37" stroke="rgba(161,159,18,0.2)" stroke-width="0.75"/>
+  <line x1="240" y1="33" x2="240" y2="37" stroke="rgba(161,159,18,0.2)" stroke-width="0.75"/>
 </svg>
