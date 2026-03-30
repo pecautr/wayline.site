@@ -56,5 +56,14 @@ The page loads `//www.instagram.com/embed.js` asynchronously at the end of `<bod
 - Pattern backgrounds are purely decorative and do not carry semantic meaning.
 - Brand colour + white text combinations should be checked against WCAG AA (contrast ≥ 4.5:1 for normal text).
 
+## Security
+- CSP meta tag in `index.html` and `404.html`: `script-src 'self' https://www.instagram.com`, `style-src 'self' 'unsafe-inline' https://fonts.googleapis.com`, `font-src 'self' https://fonts.gstatic.com`, `img-src 'self' https: data:`, `frame-src https://www.instagram.com`, `object-src 'none'`, `base-uri 'self'`, `form-action 'self'`.
+- `'unsafe-inline'` for styles is required because Instagram embeds inject inline styles; this is documented and accepted.
+- All `target="_blank"` links must use `rel="noopener noreferrer"` — enforce this when adding new links.
+- No inline `<script>` blocks — JavaScript lives in `main.js` only.
+- Instagram embed script loaded via explicit `https://` URL (never protocol-relative `//`).
+- GitHub Pages automatically provides `X-Content-Type-Options`, `X-Frame-Options`, and `X-XSS-Protection` headers.
+- HTTPS is enforced via the GitHub Pages "Enforce HTTPS" setting (see `DEPLOYMENT.md`).
+
 ## Deployment
 See `DEPLOYMENT.md` for full instructions.

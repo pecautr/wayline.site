@@ -3,6 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Security headers (where supported via meta) -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.instagram.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' https: data:; frame-src https://www.instagram.com; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self';" />
+  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
   <title>Wayline — Building a Better Society</title>
   <meta name="description" content="Your source for news about building a better society 💚💙 — Cities, transit, wilderness, and good." />
   <meta property="og:title"       content="Wayline — Building a Better Society" />
@@ -43,7 +46,7 @@
       <em>cities, transit, wilderness, and good.</em>
     </p>
     <div class="hero-cta reveal reveal-delay-3">
-      <a href="https://www.instagram.com/by_wayline" target="_blank" rel="noopener" class="btn btn-primary">
+      <a href="https://www.instagram.com/by_wayline" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
         Follow on Instagram ↗
       </a>
       <a href="#about" class="btn btn-ghost">Our Channels</a>
@@ -118,7 +121,7 @@
         <p class="section-sub reveal reveal-delay-2">
           Coverage of public transit news, advocacy, and innovation — from subway expansions to bus rapid transit and bike networks. Because how we move shapes how we live.
         </p>
-        <a href="https://www.instagram.com/transit_by_wayline" target="_blank" rel="noopener"
+        <a href="https://www.instagram.com/transit_by_wayline" target="_blank" rel="noopener noreferrer"
            class="brand-link reveal reveal-delay-3" style="background:var(--transit)">
           Follow @transit_by_wayline ↗
         </a>
@@ -131,7 +134,7 @@
             <div style="padding:16px;">
               <a href="https://www.instagram.com/p/DC-3gw5ss4G/?utm_source=ig_embed&utm_campaign=loading"
                  style="color:#c9c8cd;font-family:Arial,sans-serif;font-size:14px;font-style:normal;font-weight:normal;line-height:17px;text-decoration:none;"
-                 target="_blank">A post shared by Wayline (@by_wayline)</a>
+                 target="_blank" rel="noopener noreferrer">A post shared by Wayline (@by_wayline)</a>
             </div>
           </blockquote>
         </div>
@@ -175,7 +178,7 @@
         <p class="section-sub reveal reveal-delay-2">
           Urban design, housing policy, and neighbourhood stories — exploring what makes cities thrive and how we can build more of that for more people.
         </p>
-        <a href="https://www.instagram.com/cities_by_wayline" target="_blank" rel="noopener"
+        <a href="https://www.instagram.com/cities_by_wayline" target="_blank" rel="noopener noreferrer"
            class="brand-link reveal reveal-delay-3" style="background:var(--cities)">
           Follow @cities_by_wayline ↗
         </a>
@@ -188,7 +191,7 @@
             <div style="padding:16px;">
               <a href="https://www.instagram.com/p/DDLVQ6Ss1EP/?utm_source=ig_embed&utm_campaign=loading"
                  style="color:#c9c8cd;font-family:Arial,sans-serif;font-size:14px;font-style:normal;font-weight:normal;line-height:17px;text-decoration:none;"
-                 target="_blank">A post shared by Wayline (@by_wayline)</a>
+                 target="_blank" rel="noopener noreferrer">A post shared by Wayline (@by_wayline)</a>
             </div>
           </blockquote>
         </div>
@@ -222,7 +225,7 @@
         <p class="section-sub reveal reveal-delay-2">
           Wild places, protected lands, and outdoor adventure — celebrating and advocating for the natural world that sustains us all.
         </p>
-        <a href="https://www.instagram.com/wilderness_by_wayline" target="_blank" rel="noopener"
+        <a href="https://www.instagram.com/wilderness_by_wayline" target="_blank" rel="noopener noreferrer"
            class="brand-link reveal reveal-delay-3" style="background:var(--wilderness)">
           Follow @wilderness_by_wayline ↗
         </a>
@@ -235,7 +238,7 @@
             <div style="padding:16px;">
               <a href="https://www.instagram.com/p/DDFwRGeSs4W/?utm_source=ig_embed&utm_campaign=loading"
                  style="color:#c9c8cd;font-family:Arial,sans-serif;font-size:14px;font-style:normal;font-weight:normal;line-height:17px;text-decoration:none;"
-                 target="_blank">A post shared by Wayline (@by_wayline)</a>
+                 target="_blank" rel="noopener noreferrer">A post shared by Wayline (@by_wayline)</a>
             </div>
           </blockquote>
         </div>
@@ -261,19 +264,19 @@
         Follow whichever world moves you most, or follow all four.
       </p>
       <div class="brands-row">
-        <a href="https://www.instagram.com/by_wayline" target="_blank" rel="noopener"
+        <a href="https://www.instagram.com/by_wayline" target="_blank" rel="noopener noreferrer"
            class="brand-chip" style="background:var(--wayline)">
           @by_wayline
         </a>
-        <a href="https://www.instagram.com/transit_by_wayline" target="_blank" rel="noopener"
+        <a href="https://www.instagram.com/transit_by_wayline" target="_blank" rel="noopener noreferrer"
            class="brand-chip" style="background:var(--transit)">
           @transit_by_wayline
         </a>
-        <a href="https://www.instagram.com/cities_by_wayline" target="_blank" rel="noopener"
+        <a href="https://www.instagram.com/cities_by_wayline" target="_blank" rel="noopener noreferrer"
            class="brand-chip" style="background:var(--cities)">
           @cities_by_wayline
         </a>
-        <a href="https://www.instagram.com/wilderness_by_wayline" target="_blank" rel="noopener"
+        <a href="https://www.instagram.com/wilderness_by_wayline" target="_blank" rel="noopener noreferrer"
            class="brand-chip" style="background:var(--wilderness)">
           @wilderness_by_wayline
         </a>
@@ -294,31 +297,18 @@
   <footer>
     <div class="footer-row">
       <span>© 2024 Wayline</span>
-      <a href="https://www.instagram.com/by_wayline" target="_blank" rel="noopener">@by_wayline</a>
-      <a href="https://www.instagram.com/transit_by_wayline" target="_blank" rel="noopener">@transit_by_wayline</a>
-      <a href="https://www.instagram.com/cities_by_wayline" target="_blank" rel="noopener">@cities_by_wayline</a>
-      <a href="https://www.instagram.com/wilderness_by_wayline" target="_blank" rel="noopener">@wilderness_by_wayline</a>
+      <a href="https://www.instagram.com/by_wayline" target="_blank" rel="noopener noreferrer">@by_wayline</a>
+      <a href="https://www.instagram.com/transit_by_wayline" target="_blank" rel="noopener noreferrer">@transit_by_wayline</a>
+      <a href="https://www.instagram.com/cities_by_wayline" target="_blank" rel="noopener noreferrer">@cities_by_wayline</a>
+      <a href="https://www.instagram.com/wilderness_by_wayline" target="_blank" rel="noopener noreferrer">@wilderness_by_wayline</a>
       <a href="mailto:hello@wayline.site">hello@wayline.site</a>
     </div>
   </footer>
 
   <!-- Instagram embed script -->
-  <script async src="//www.instagram.com/embed.js"></script>
-
-  <!-- Scroll-reveal -->
-  <script>
-    (function () {
-      var io = new IntersectionObserver(function (entries) {
-        entries.forEach(function (e) {
-          if (e.isIntersecting) {
-            e.target.classList.add('visible');
-            io.unobserve(e.target);
-          }
-        });
-      }, { threshold: 0.12 });
-      document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
-    }());
-  </script>
+  <script async src="https://www.instagram.com/embed.js"></script>
+  <!-- Scroll-reveal (external for CSP compliance) -->
+  <script src="main.js" defer></script>
 
 </body>
 </html>

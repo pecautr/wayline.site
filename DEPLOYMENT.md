@@ -111,6 +111,37 @@ Each brand section contains an Instagram `<blockquote>` embed. To swap in a diff
 
 ---
 
+## Security
+
+### What's implemented
+
+| Measure | How |
+|---|---|
+| HTTPS enforcement | GitHub Pages "Enforce HTTPS" setting (tick in Settings → Pages) |
+| Content Security Policy | `<meta http-equiv="Content-Security-Policy">` in `index.html` and `404.html` |
+| Referrer Policy | `<meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">` |
+| Tab-napping prevention | All `target="_blank"` links carry `rel="noopener noreferrer"` |
+| Plugin blocking | CSP `object-src 'none'` disables Flash/Silverlight/plugins |
+| Base-tag injection | CSP `base-uri 'self'` prevents injected `<base>` tags from redirecting relative URLs |
+| Form hijacking | CSP `form-action 'self'` (no forms exist, defence-in-depth) |
+| No inline scripts | JavaScript is in `main.js`; `script-src` allows only `'self'` + Instagram's CDN |
+| Custom 404 | `404.html` served instead of GitHub's default page |
+
+### GitHub Pages default headers (provided automatically)
+GitHub Pages also sets the following HTTP headers for every response — no action required:
+- `X-Content-Type-Options: nosniff`
+- `X-Frame-Options: deny`
+- `X-XSS-Protection: 1; mode=block`
+
+### Note on `'unsafe-inline'` for styles
+The `style-src` directive includes `'unsafe-inline'` because:
+1. Instagram embed blockquotes render entirely via inline `style` attributes injected by `embed.js`.
+2. The HTML uses `style="background:..."` attributes for per-brand colour overrides.
+
+Removing inline styles would require rewriting all brand colour props into dedicated CSS classes and is not practical while maintaining Instagram embeds.
+
+---
+
 ## Troubleshooting
 
 | Problem | Solution |
