@@ -373,6 +373,66 @@ nav {
 .mission-card p { font-size: 0.9rem; line-height: 1.7; opacity: 0.7; }
 
 /* ============================================================
+   WORK / CASE STUDIES STRIP
+   ============================================================ */
+.work-strip {
+  margin-top: 3.5rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid rgba(44,31,15,0.12);
+}
+
+.work-strip-label {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-light);
+  margin-bottom: 1.5rem;
+}
+
+.work-cases {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.25rem;
+}
+
+.work-case {
+  background: var(--paper-dark);
+  border-left: 3px solid var(--wayline);
+  padding: 1.25rem 1.5rem;
+}
+
+.work-case-stat {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 2rem;
+  color: var(--wayline);
+  line-height: 1;
+  margin-bottom: 0.6rem;
+}
+
+.work-case-icon {
+  display: block;
+  font-size: 1.6rem;
+  line-height: 1;
+  margin-bottom: 0.6rem;
+}
+
+.work-case p {
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: var(--ink-mid);
+}
+
+.work-case p strong {
+  display: block;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 0.25rem;
+}
+
+/* ============================================================
    BRAND SECTIONS  (shared base)
    ============================================================ */
 .brand-section {
