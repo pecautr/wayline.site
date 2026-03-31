@@ -373,15 +373,15 @@ nav {
 .mission-card p { font-size: 0.9rem; line-height: 1.7; opacity: 0.7; }
 
 /* ============================================================
-   WORK / CASE STUDIES STRIP
+   BLOG PREVIEW STRIP  — about section
    ============================================================ */
-.work-strip {
+.blog-preview {
   margin-top: 3.5rem;
   padding-top: 2.5rem;
   border-top: 1px solid rgba(44,31,15,0.12);
 }
 
-.work-strip-label {
+.blog-preview-label {
   font-family: var(--font-body);
   font-size: 0.65rem;
   font-weight: 700;
@@ -391,58 +391,78 @@ nav {
   margin-bottom: 1.5rem;
 }
 
-.work-cases {
+.blog-preview-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.25rem;
+  margin-bottom: 1.75rem;
 }
 
-.work-case {
+.blog-preview-card {
   background: var(--paper-dark);
-  border-left: 3px solid var(--wayline);
-  padding: 1.25rem 1.5rem;
+  border-top: 3px solid var(--wayline);
+  border-left: 1px solid rgba(44,31,15,0.1);
+  border-right: 1px solid rgba(44,31,15,0.1);
+  border-bottom: 1px solid rgba(44,31,15,0.1);
+  padding: 1.4rem 1.5rem 1.2rem;
+  transition: transform 0.22s, box-shadow 0.22s;
 }
+.blog-preview-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-sm); }
 
-.work-case-stat {
-  display: block;
-  font-family: var(--font-display);
-  font-size: 2rem;
-  color: var(--wayline);
-  line-height: 1;
-  margin-bottom: 0.6rem;
-}
-
-.work-case-icon {
-  display: block;
-  font-size: 1.6rem;
-  line-height: 1;
-  margin-bottom: 0.6rem;
-}
-
-.work-case p {
-  font-size: 0.9rem;
-  line-height: 1.65;
-  color: var(--ink-mid);
-}
-
-.work-case p strong {
-  display: block;
-  font-weight: 600;
-  color: var(--ink);
-  margin-bottom: 0.25rem;
-}
-
-.work-case-link {
+.blog-preview-cat {
   display: inline-block;
-  margin-top: 0.6rem;
+  font-family: var(--font-body);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--wayline);
+  margin-bottom: 0.6rem;
+}
+
+.blog-preview-card h3 {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.3;
+  margin-bottom: 0.65rem;
+  color: var(--ink);
+}
+
+.blog-preview-card h3 a {
+  color: inherit;
+  text-decoration: none;
+}
+.blog-preview-card h3 a:hover { color: var(--wayline); }
+
+.blog-preview-card p {
+  font-size: 0.88rem;
+  line-height: 1.7;
+  color: var(--ink-mid);
+  margin-bottom: 0.9rem;
+}
+
+.blog-preview-link {
   font-size: 0.82rem;
   font-weight: 600;
   color: var(--wayline);
   text-decoration: none;
   letter-spacing: 0.02em;
 }
+.blog-preview-link:hover { text-decoration: underline; }
 
-.work-case-link:hover { text-decoration: underline; }
+.blog-preview-all {
+  display: inline-block;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--ink-light);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  border-bottom: 1px solid rgba(44,31,15,0.2);
+  padding-bottom: 1px;
+  transition: color 0.2s, border-color 0.2s;
+}
+.blog-preview-all:hover { color: var(--wayline); border-color: var(--wayline); }
 
 /* Pull-quote callout — used in about section */
 .pull-quote {
@@ -579,8 +599,8 @@ nav {
 }
 
 .embed-frame {
-  width: 100%;
-  max-width: 400px;
+  width: 326px;
+  max-width: 100%;
   border-radius: var(--radius-sm);
   overflow: hidden;
   box-shadow: 0 16px 48px rgba(0,0,0,0.5);
@@ -594,7 +614,7 @@ nav {
 
 .embed-frame blockquote {
   margin: 0 !important;
-  width: 100% !important;
+  width: 326px !important;
   max-width: 100% !important;
   min-width: 0 !important;
   border-radius: 0 !important;

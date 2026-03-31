@@ -42,29 +42,54 @@
     return t;
   }
 
-  // ---- Block markdown parser ----
+  // ---- Block markdown parser (line-by-line for robust heading detection) ----
   function renderMarkdown(md) {
-    var blocks = md.split(/\n{2,}/);
+    var lines = md.split(/\r?\n/);
     var html = [];
-    blocks.forEach(function (raw) {
-      var block = raw.trim();
-      if (!block) return;
-      if (block.startsWith('### ')) {
-        html.push('<h3>' + inline(block.slice(4)) + '</h3>');
-      } else if (block.startsWith('## ')) {
-        html.push('<h2>' + inline(block.slice(3)) + '</h2>');
-      } else if (block.startsWith('# ')) {
-        html.push('<h1>' + inline(block.slice(2)) + '</h1>');
-      } else if (/^[ \t]*[-*] /.test(block.split('\n')[0])) {
-        var items = block.split('\n')
-          .filter(function (l) { return /^[ \t]*[-*] /.test(l); })
-          .map(function (l) { return '<li>' + inline(l.replace(/^[ \t]*[-*] /, '')) + '</li>'; });
-        html.push('<ul>' + items.join('') + '</ul>');
+    var inList = false;
+    var listItems = [];
+    var paraLines = [];
+
+    function flushPara() {
+      if (paraLines.length) {
+        html.push('<p>' + inline(paraLines.join(' ')) + '</p>');
+        paraLines = [];
+      }
+    }
+
+    function flushList() {
+      if (listItems.length) {
+        html.push('<ul>' + listItems.join('') + '</ul>');
+        listItems = [];
+        inList = false;
+      }
+    }
+
+    lines.forEach(function (line) {
+      var raw = line.replace(/\r$/, '');
+      if (/^### /.test(raw)) {
+        flushPara(); flushList();
+        html.push('<h3>' + inline(raw.slice(4)) + '</h3>');
+      } else if (/^## /.test(raw)) {
+        flushPara(); flushList();
+        html.push('<h2>' + inline(raw.slice(3)) + '</h2>');
+      } else if (/^# /.test(raw)) {
+        flushPara(); flushList();
+        html.push('<h1>' + inline(raw.slice(2)) + '</h1>');
+      } else if (/^[ \t]*[-*] /.test(raw)) {
+        flushPara();
+        inList = true;
+        listItems.push('<li>' + inline(raw.replace(/^[ \t]*[-*] /, '')) + '</li>');
+      } else if (raw.trim() === '') {
+        flushPara(); flushList();
       } else {
-        // Paragraph — join continuation lines with a space
-        html.push('<p>' + inline(block.split('\n').join(' ')) + '</p>');
+        paraLines.push(raw);
       }
     });
+
+    flushPara();
+    flushList();
+
     return html.join('\n');
   }
 
@@ -98,8 +123,15 @@
   var postContent = document.getElementById('post-content');
   if (!postContent) return;
 
+  // Slug from ?post=slug query param (blog/post.html) or /posts/slug pathname
   var params = new URLSearchParams(window.location.search);
   var slug = params.get('post') || '';
+  if (!slug) {
+    var pathEnd = window.location.pathname.replace(/\/$/, '').split('/').pop();
+    if (pathEnd && pathEnd !== 'index.html' && pathEnd !== 'post.html') {
+      slug = pathEnd;
+    }
+  }
 
   // Strict allowlist: lowercase letters, digits, hyphens, 1–80 chars
   if (!/^[a-z0-9][a-z0-9-]{0,79}$/.test(slug)) {
@@ -120,9 +152,9 @@
       // Update document title (text property — no escaping needed)
       if (meta.title) document.title = meta.title + ' \u2014 Wayline';
 
-      // Update canonical link
+      // Update canonical link — always the clean /posts/slug URL
       var canon = document.querySelector('link[rel="canonical"]');
-      if (canon) canon.setAttribute('href', 'https://www.wayline.site/blog/post.html?post=' + encodeURIComponent(slug));
+      if (canon) canon.setAttribute('href', 'https://www.wayline.site/posts/' + encodeURIComponent(slug));
 
       // Update meta tags
       setMetaName('description', meta.description || '');

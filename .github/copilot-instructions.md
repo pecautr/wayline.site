@@ -30,11 +30,16 @@ static/
     WaylineFavicon.png   Site favicon
 blog/
   index.html             Blog listing page (manually maintained)
-  post.html              Blog post reader (fetches + renders markdown)
+  post.html              Legacy post reader — still works via ?post=slug
   blog.js                Markdown parser, frontmatter parser, post loader
   blog.css               Blog-specific typography and layout styles
   posts/
     *.md                 Blog posts — YAML frontmatter + Markdown body
+posts/
+  [slug]/
+    index.html           Per-post shell page — GitHub Pages serves clean /posts/slug URLs
+                         blog.js reads the slug from the URL pathname and loads
+                         blog/posts/[slug].md via fetch
 .github/
   copilot-instructions.md  This file
 DEPLOYMENT.md            Deployment guide
@@ -59,8 +64,17 @@ Both loaded from Google Fonts CDN with system-font fallbacks.
 - To add a **new brand section**: copy an existing brand section block in `index.html`, give it a unique `id`, create a matching CSS class in `style.css` with `background-color`, `background-image: url('patterns/...')`, and add a new pattern SVG to `patterns/`.
 - To update **colours**: edit the CSS custom property in `:root` — changes propagate everywhere.
 
+## Blog
+- **Listing page**: `blog/index.html` — manually maintained; copy an existing `<article class="post-card">` block and update slug, title, date, category, and excerpt. Link to `/posts/[slug]`.
+- **Post source**: `blog/posts/[slug].md` — YAML frontmatter (`title`, `date`, `description`, `category`, `slug`) followed by Markdown body.
+- **Post URL**: `/posts/[slug]` — served by `posts/[slug]/index.html`. To add a new post, create both the `.md` file and a new `posts/[slug]/index.html` (copy any existing one verbatim, updating only the `og:url` and `canonical` meta tags to the new slug).
+- **blog.js markdown parser**: line-by-line; headings (`#`, `##`, `###`) are detected per-line so they render correctly regardless of blank-line spacing. Do not revert to block-splitting.
+- **Slug detection in blog.js**: reads from URL pathname first (`/posts/[slug]`), falls back to `?post=slug` query param for backward compat.
+- **Canonical URLs** are always set to `https://www.wayline.site/posts/[slug]`.
+- **blog/post.html** still works as a fallback via `?post=slug` — do not remove it.
+
 ## Instagram Embeds
-The page loads `//www.instagram.com/embed.js` asynchronously at the end of `<body>`. Embeds render client-side; they appear as plain links in feed-readers and no-JS environments.
+The page loads `https://www.instagram.com/embed.js` asynchronously at the end of `<body>`. Embeds render client-side; they appear as plain links in feed-readers and no-JS environments.
 
 ## Accessibility
 - All decorative SVGs carry `aria-hidden="true"`.
