@@ -18,12 +18,23 @@ All colour tokens are defined as CSS custom properties in `style.css` under `:ro
 ```
 index.html               Main page (single-page layout)
 style.css                All styles — fonts, layout, animations, brand sections
+main.js                  Scroll-reveal IntersectionObserver
 CNAME                    GitHub Pages custom domain (www.wayline.site)
 patterns/
   hero.svg               Dot-network pattern — hero section background
   transit.svg            Subway-map lines & station dots — transit section
   cities.svg             Street-grid with blocks & diagonal — cities section
   wilderness.svg         Contour lines (topographic) — wilderness section
+static/
+  img/
+    WaylineFavicon.png   Site favicon
+blog/
+  index.html             Blog listing page (manually maintained)
+  post.html              Blog post reader (fetches + renders markdown)
+  blog.js                Markdown parser, frontmatter parser, post loader
+  blog.css               Blog-specific typography and layout styles
+  posts/
+    *.md                 Blog posts — YAML frontmatter + Markdown body
 .github/
   copilot-instructions.md  This file
 DEPLOYMENT.md            Deployment guide

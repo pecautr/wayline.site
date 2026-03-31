@@ -432,6 +432,38 @@ nav {
   margin-bottom: 0.25rem;
 }
 
+.work-case-link {
+  display: inline-block;
+  margin-top: 0.6rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--wayline);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+
+.work-case-link:hover { text-decoration: underline; }
+
+/* Pull-quote callout — used in about section */
+.pull-quote {
+  margin: 3rem 0 0;
+  padding: 1.6rem 2rem;
+  border-left: 3px solid var(--wayline);
+  background: var(--paper-dark);
+}
+.pull-quote p {
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 3vw, 1.85rem);
+  color: var(--ink);
+  margin-bottom: 0.3rem;
+  line-height: 1.15;
+}
+.pull-quote span {
+  font-size: 0.88rem;
+  color: var(--ink-mid);
+  opacity: 0.75;
+}
+
 /* ============================================================
    BRAND SECTIONS  (shared base)
    ============================================================ */
@@ -500,6 +532,24 @@ nav {
 
 .brand-info .section-title { color: var(--white); }
 .brand-info .section-sub { color: rgba(250,247,242,0.65); }
+
+/* Section motto — bold tagline under channel name in dark brand sections */
+.brand-motto {
+  font-family: var(--font-display);
+  font-size: clamp(1.05rem, 2.5vw, 1.45rem);
+  color: rgba(250,247,242,0.92);
+  line-height: 1.2;
+  margin-bottom: 0.8rem;
+}
+
+/* Brand aside — secondary callout in brand section info column */
+.brand-aside {
+  font-size: 0.9rem;
+  color: rgba(250,247,242,0.42);
+  line-height: 1.75;
+  margin-top: 1rem;
+  font-style: italic;
+}
 
 .brand-link {
   display: inline-flex;
