@@ -51,9 +51,11 @@
   --font-display:  'Hermeneus One', Georgia, 'Times New Roman', serif;
   /* Gasoek One — Transit section */
   --font-transit:  'Gasoek One', 'Hermeneus One', serif;
-  /* Skranji — Cities section (bold urban stencil; update if a specific typeface is confirmed) */
-  --font-cities:   'Skranji', 'Hermeneus One', serif;
-  /* DM Sans — body copy */
+  /* Konkhmer Sleokchher — Cities section */
+  --font-cities:   'Konkhmer Sleokchher', 'Hermeneus One', serif;
+  /* Skranji — Wilderness section (bold urban stencil; update if a specific typeface is confirmed) */
+  --font-wilderness: 'Skranji', 'Hermeneus One', serif;
+  /* DM Sans — body copy */ 
   --font-body:     'DM Sans', system-ui, sans-serif;
 
   /* Slightly less aggressive radii for an architectural/editorial feel */
@@ -622,6 +624,10 @@ nav {
   background-repeat: repeat;
   background-size: 320px 80px;
   color: var(--white);
+}
+
+.wilderness-title {
+  font-family: var(--font-wilderness);
 }
 
 .wilderness-section::before {
